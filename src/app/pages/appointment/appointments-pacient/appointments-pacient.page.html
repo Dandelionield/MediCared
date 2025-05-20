@@ -1,0 +1,17 @@
+<app-loading></app-loading>
+
+<app-header title="Mis Citas" [showBackButton]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+
+	<ion-list lines="full" class="medical-list">
+
+		@for (appointment of appointments; track appointment.id) {
+
+			<app-appointment-row [appointment] = "appointment"></app-appointment-row>
+
+		}
+
+	</ion-list>
+
+</ion-content>

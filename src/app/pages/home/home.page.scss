@@ -1,0 +1,36 @@
+/* home.page.scss */
+.container {
+	padding: 20px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.menu-grid {
+	margin-top: 40px;
+	
+	ion-col {
+		padding: 10px;
+	}
+}
+
+.medical-button {
+	--background: #2e7d32;
+	--background-hover: #1b5e20;
+	--border-radius: 12px;
+	height: 80px;
+	font-size: 1.1em;
+	font-weight: 500;
+	
+	ion-icon {
+		font-size: 1.4em;
+		margin-right: 8px;
+	}
+}
+
+/* Efecto hover para dispositivos con mouse */
+@media (hover: hover) {
+	.medical-button:hover {
+		transform: scale(1.02);
+		transition: transform 0.2s ease-in-out;
+	}
+}

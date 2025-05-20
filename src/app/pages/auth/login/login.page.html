@@ -1,0 +1,38 @@
+<app-loading></app-loading>
+
+<ion-content [fullscreen]="true">
+	<div class="background-blur"></div>
+	
+	<ion-card class="login-card">
+		<ion-card-header>
+			<ion-card-title class="medical-title">
+				<ion-icon name="medkit-outline"></ion-icon>
+				TuCita
+			</ion-card-title>
+		</ion-card-header>
+
+		<ion-card-content>
+			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+				<ion-item lines="full">
+					<ion-label position="floating">Correo</ion-label>
+					<ion-input type="email" formControlName="email" placeholder="your@email.com" required></ion-input>
+				</ion-item>
+
+				<ion-item lines="full">
+					<ion-label position="floating">Contraseña</ion-label>
+					<ion-input type="password" formControlName="password" placeholder="•••••••" required></ion-input>
+				</ion-item>
+
+				<ion-button type="submit" [disabled]="loginForm.invalid" expand="block" class="medical-button">
+					Ingresar
+					<ion-icon slot="end" name="log-in-outline"></ion-icon>
+				</ion-button>
+
+				<div class="links-container">
+					<a href="#" class="medical-link">¿Olvidaste tu contraseña?</a>
+					<a routerLink="/logup" class="medical-link">¿No tienes cuenta? Registrate aquí!</a>
+				</div>
+			</form>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

@@ -1,0 +1,14 @@
+
+.medical-list {
+
+	background: transparent;
+	padding: 16px;
+
+}
+
+@media (min-width: 768px) {
+	.medical-list {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+}

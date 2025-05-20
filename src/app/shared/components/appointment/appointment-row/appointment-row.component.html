@@ -1,0 +1,27 @@
+<ion-item class="appointment-item">
+	<div class="content-container">
+		<div class="details">
+			<h3 [class.fecha-completada]="!appointment.state">{{ formatDate(appointment.begins) }}</h3>
+			<p>Estado: 
+				<span [class]="appointment.state ? 'status-pending' : 'status-completed'">
+				{{ appointment.state ? 'Cita pendiente' : 'Cita finalizada' }}
+				</span>
+			</p>
+			<p>Tipo: {{ getAppointmentType(appointment.appointed) }}</p>
+		</div>
+
+		@if(appointment.state){
+
+			<div class="actions">
+				<ion-button 
+					fill="clear" 
+					class="medical-button"
+					(click)="navigateToUpdate()">
+					<ion-icon name="create-outline" slot="icon-only"></ion-icon>
+				</ion-button>
+			</div>
+
+		}
+
+	</div>
+</ion-item>

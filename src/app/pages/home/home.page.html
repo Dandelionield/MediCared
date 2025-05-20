@@ -1,0 +1,47 @@
+<app-loading></app-loading>
+
+<app-header title = "Principal"></app-header>
+
+<ion-content [fullscreen]="true">
+	<div class="container">
+
+		@if((loggedUser$ | async)?.admin){
+			<ion-grid class="menu-grid">
+				<ion-row>
+					<ion-col size="12">
+						<ion-button 
+							expand="block" 
+							class="medical-button"
+							routerLink="/appointments">
+							<ion-icon name="calendar-outline" slot="start"></ion-icon>
+							Citas Programadas
+						</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		}@else{
+			<ion-grid class="menu-grid">
+				<ion-row>
+					<ion-col size="12" size-md="6">
+						<ion-button 
+							expand="block" 
+							class="medical-button"
+							routerLink="/schedule-appointment">
+							<ion-icon name="add-circle-outline" slot="start"></ion-icon>
+							Agendar Nueva Cita
+						</ion-button>
+					</ion-col>
+					<ion-col size="12" size-md="6">
+						<ion-button 
+							expand="block" 
+							class="medical-button"
+							routerLink="/my-appointments">
+							<ion-icon name="create-outline" slot="start"></ion-icon>
+							Modificar Mis Citas
+						</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		}
+	</div>
+</ion-content>
