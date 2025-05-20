@@ -1,0 +1,130 @@
+
+.detail-card {
+
+	margin: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 16px rgba(0, 100, 0, 0.1);
+	background: rgba(255, 255, 255, 0.95);
+
+	.medical-title {
+
+		color: #2e7d32;
+		font-size: 1.5em;
+		
+		ion-icon {
+
+			vertical-align: middle;
+			margin-right: 10px;
+			font-size: 1.2em;
+		}
+
+	}
+
+}
+
+.detail-section {
+
+	margin: 20px 0;
+	padding: 15px;
+	background: #f8f9fa;
+	border-radius: 10px;
+
+	.section-title {
+
+		color: #43a047;
+		margin: 0 0 15px;
+		font-size: 1.2em;
+		font-weight: 600;
+
+	}
+
+}
+
+.detail-row {
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
+	padding: 8px 0;
+	border-bottom: 1px solid #eee;
+
+	&:last-child {
+
+		border-bottom: none;
+
+	}
+
+}
+
+.detail-label {
+
+	color: #666;
+	font-weight: 500;
+	flex: 1;
+
+}
+
+.detail-value {
+
+	color: #333;
+	flex: 2;
+	text-align: right;
+
+}
+
+.status-active {
+
+	color: #43a047;
+	background: #e8f5e9;
+	padding: 6px 12px;
+	border-radius: 15px;
+	font-weight: 500;
+
+}
+
+.status-inactive {
+
+	color: #d32f2f;
+	background: #ffebee;
+	padding: 6px 12px;
+	border-radius: 15px;
+	font-weight: 500;
+
+}
+
+.actions-section {
+
+	margin-top: 30px;
+	ion-item {
+
+		--background: transparent;
+		--padding-start: 0;
+
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.detail-card {
+
+		max-width: 700px;
+		margin: 40px auto;
+		
+		.detail-section {
+
+			margin: 30px 0;
+			padding: 20px;
+
+		}
+		
+		.detail-row {
+
+			font-size: 1.1em;
+
+		}
+
+	}
+
+}

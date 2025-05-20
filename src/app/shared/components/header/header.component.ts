@@ -15,6 +15,7 @@ import { User } from '@core/services/user/entity/user.entity';
 
 	@Input() public title: string = 'Page';
 	@Input() public showBackButton: boolean = false;
+	@Input() public lastPage: string | undefined = undefined;
 	public user!: User | undefined;
 	public isExpanded = false;
 
@@ -53,7 +54,15 @@ import { User } from '@core/services/user/entity/user.entity';
 
 	public goBack(): void{
 
-		this.location.back();
+		if (!this.lastPage){
+
+			this.location.back();
+
+		}else{
+
+			this.router.navigate([this.lastPage]);
+
+		}
 
 	}
 

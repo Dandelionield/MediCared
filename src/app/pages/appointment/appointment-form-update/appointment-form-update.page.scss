@@ -1,0 +1,98 @@
+
+.form-card {
+
+	margin: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 16px rgba(0, 100, 0, 0.1);
+	background: rgba(255, 255, 255, 0.95);
+	
+	ion-item {
+
+		--padding-start: 0;
+		--inner-padding-end: 0;
+		margin: 15px 0;
+		--border-color: #c8e6c9;
+		
+		ion-label {
+
+			color: #2e7d32;
+			font-weight: 500;
+			&[position="floating"] {
+
+				transform-origin: left center;
+
+			}
+
+		}
+		
+		ion-select, ion-datetime {
+
+			width: 100%;
+			color: #1b5e20;
+			font-size: 1em;
+			padding: 8px 0;
+
+		}
+		
+		ion-toggle {
+
+			--handle-background-checked: #2e7d32;
+			--background-checked: #c8e6c9;
+			padding: 12px 0;
+
+		}
+
+	}
+
+}
+
+.medical-button {
+
+	--background: #2e7d32;
+	--background-hover: #1b5e20;
+	--border-radius: 8px;
+	--padding-top: 16px;
+	--padding-bottom: 16px;
+	margin-top: 25px;
+	font-weight: 600;
+	transition: transform 0.2s ease-in-out;
+	
+	&:hover {
+
+		transform: scale(1.02);
+
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.form-card {
+
+		max-width: 600px;
+		margin: 40px auto;
+		padding: 20px;
+		
+		ion-item {
+
+			margin: 20px 0;
+			
+			ion-select, ion-datetime {
+
+				font-size: 1.1em;
+
+			}
+
+		}
+
+	}
+	
+	.medical-button {
+
+		font-size: 1.1em;
+		max-width: 300px;
+		margin: 25px auto 0;
+
+	}
+
+}

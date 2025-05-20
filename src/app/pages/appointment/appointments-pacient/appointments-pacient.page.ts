@@ -17,7 +17,7 @@ import { User } from '@core/services/user/entity/user.entity';
 }) export class AppointmentsPacientPage implements OnInit {
 
 	private user_id!: User['id'];
-	public appointments!: Array<Appointment>;
+	public appointments: Array<Appointment> = [];
 
 	public constructor(
 
@@ -50,8 +50,6 @@ import { User } from '@core/services/user/entity/user.entity';
 			next: (t) => {
 
 				this.appointments = t;
-
-				console.log(t);
 
 				this.loadingService.hide();
 

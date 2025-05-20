@@ -68,11 +68,11 @@ import { Timestamp } from '@angular/fire/firestore';
 
 			}
 
-			if (await this.userService.exist(dni)){
+			/*if (await this.userService.exist(dni)){
 
 				throw new Error(`Usuario con documento ${dni} ya existe.`);
 
-			}
+			}/**/
 
 			const user: User = {
 

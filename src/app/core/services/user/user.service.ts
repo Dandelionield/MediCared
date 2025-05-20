@@ -127,7 +127,7 @@ import { Firestore, collection, collectionData, CollectionReference, deleteDoc, 
 			);
 			
 			const querySnapshot = await getDocs(q);
-			return querySnapshot.empty;
+			return !querySnapshot.empty;
 
 		}catch (e: any){
 

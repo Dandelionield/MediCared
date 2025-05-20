@@ -1,69 +1,91 @@
 .appointment-item {
+
 	--background: rgba(255, 255, 255, 0.95);
 	border-radius: 12px;
 	margin-bottom: 12px;
 	box-shadow: 0 2px 8px rgba(0, 100, 0, 0.1);
 	
 	.content-container {
+
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 10px 0;
+
 	}
 
 	.details {
+
 		flex: 1;
 		
 		h3 {
-		color: #2e7d32;
-		margin: 0 0 8px;
-		font-weight: 600;
+
+			color: #2e7d32;
+			margin: 0 0 8px;
+			font-weight: 600;
+
 		}
 		
 		p {
-		margin: 4px 0;
-		color: #666;
+
+			margin: 4px 0;
+			color: #666;
+
 		}
+
 	}
 
 	.fecha-completada {
+
 		color: #757575 !important;
 		text-decoration: line-through;
+
 	}
 
 	.status-pending {
+
 		color: #43a047;
 		font-weight: 500;
 		padding: 2px 8px;
 		border-radius: 4px;
 		background: #e8f5e9;
+
 	}
 
 	.status-completed {
+
 		color: #d32f2f;
 		background: #ffebee;
 		font-weight: 500;
 		padding: 2px 8px;
 		border-radius: 4px;
+
 	}
 
 }
 
 .medical-button {
+
 	--color: #2e7d32;
 	--padding-start: 0;
 	--padding-end: 0;
 	
 	ion-icon {
-	font-size: 1.8em;
+
+		font-size: 1.8em;
+
 	}
+
 }
 
-/* Para pantallas más grandes */
 @media (min-width: 768px) {
+
 	.medical-list {
-	max-width: 800px;
-	margin: 0 auto;
+
+		max-width: 800px;
+		margin: 0 auto;
+
 	}
+
 }

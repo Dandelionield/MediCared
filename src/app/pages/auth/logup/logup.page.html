@@ -1,68 +1,85 @@
 <app-loading></app-loading>
 
 <ion-content [fullscreen]="true">
+
 	<div class="background-blur"></div>
 	
 	<ion-card class="login-card">
+
 		<ion-card-header>
+
 			<ion-card-title class="medical-title">
+
 				<ion-icon name="medkit-outline"></ion-icon>
 				Registro de Usuario
+
 			</ion-card-title>
 
 		</ion-card-header>
 
 		<ion-card-content>
+
 			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
 				<ion-item lines="full">
+
 					<ion-label position="floating">DNI</ion-label>
 					<ion-input type="number" formControlName="dni" required></ion-input>
+
 				</ion-item>
 
 				<ion-item lines="full">
+
 					<ion-label position="floating">Nombre</ion-label>
 					<ion-input type="text" formControlName="name" required></ion-input>
+
 				</ion-item>
 
 				<ion-item lines="full">
+
 					<ion-label position="floating">Apellido</ion-label>
 					<ion-input type="text" formControlName="surname" required></ion-input>
+
 				</ion-item>
 
 				<ion-item lines="full">
+
 					<ion-label position="floating">Fecha de Nacimiento</ion-label>
-					<ion-datetime
-						formControlName="birthDate"
-						display-format="DD/MM/YYYY"
-						min="1920-01-01"
-						max="2020-01-01"
-						placeholder="Seleccionar fecha">
-					</ion-datetime>
+					<ion-datetime formControlName="birthDate" display-format="DD/MM/YYYY" min="1920-01-01" max="2020-01-01" placeholder="Seleccionar fecha"></ion-datetime>
+
 				</ion-item>
 
 				<ion-item lines="full">
+
 					<ion-label position="floating">Correo electrónico</ion-label>
 					<ion-input type="email" formControlName="email" required></ion-input>
+
 				</ion-item>
 
 				<ion-item lines="full">
+
 					<ion-label position="floating">Contraseña</ion-label>
 					<ion-input type="password" formControlName="password" required></ion-input>
+
 				</ion-item>
 
-				<ion-button 
-					type="submit" 
-					[disabled]="loginForm.invalid" 
-					expand="block" 
-					class="medical-button">
+				<ion-button type="submit" [disabled]="loginForm.invalid" expand="block" class="medical-button">
+
 					Registrar
 					<ion-icon slot="end" name="person-add-outline"></ion-icon>
+
 				</ion-button>
 
 				<div class="links-container">
+
 					<a routerLink="/login" class="medical-link">¿Ya tienes cuenta? Ingresa aquí</a>
+
 				</div>
+
 			</form>
+
 		</ion-card-content>
+
 	</ion-card>
+
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Appointment } from '@core/services/appointment/entity/appointment.entity';
+import { Appointment, appointmentTypes } from '@core/services/appointment/entity/appointment.entity';
+import { User } from '@core/services/user/entity/user.entity';
 import { Timestamp } from '@angular/fire/firestore';
 
 @Component({
@@ -17,6 +18,8 @@ import { Timestamp } from '@angular/fire/firestore';
 		required: true
 
 	}) public appointment!: Appointment;
+
+	@Input() public user: User | undefined = undefined;
 
 	public constructor(private router: Router) {}
 
@@ -61,17 +64,7 @@ import { Timestamp } from '@angular/fire/firestore';
 
 	public getAppointmentType(type: number): string {
 
-		const types = [
-
-			'Consulta general',
-			'Control rutinario',
-			'Examen especializado',
-			'Terapia',
-			'Emergencia'
-
-		];
-
-		return types[type] || 'Tipo desconocido';
+		return appointmentTypes[type] || 'Tipo desconocido';
 
 	}
 

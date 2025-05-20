@@ -37,18 +37,22 @@
 }
 
 .medical-button {
+
 	--background: #2e7d32;
 	--background-hover: #1b5e20;
 	--border-radius: 8px;
 	margin: 25px 0 15px;
 	font-weight: 600;
+
 }
 
 .links-container {
+
 	text-align: center;
 	margin-top: 15px;
 
 	a {
+
 		display: block;
 		color: #43a047;
 		text-decoration: none;
@@ -56,15 +60,23 @@
 		margin: 8px 0;
 		
 		&:hover {
+
 			color: #1b5e20;
 			text-decoration: underline;
+
 		}
+
 	}
+
 }
 
 @media (min-width: 768px) {
+
 	.login-card {
+
 		margin: 8% auto;
 		max-width: 600px;
+
 	}
+
 }

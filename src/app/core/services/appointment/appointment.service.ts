@@ -45,7 +45,12 @@ import { Firestore, collection, collectionData, CollectionReference, deleteDoc, 
 
 		try{
 
-			return collectionData(collection(this.firestore, this.collectionName), {
+			return collectionData(query(
+
+				collection(this.firestore, this.collectionName) as CollectionReference<Appointment>,
+				orderBy('begins', 'desc')
+
+			), {
 
 				idField: this.collectionIDField as keyof Appointment
 

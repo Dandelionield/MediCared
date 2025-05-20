@@ -1,0 +1,47 @@
+/* appointment-list.page.scss */
+.medical-list {
+	padding: 16px;
+	background: linear-gradient(160deg, #f0f9f0 0%, #e0f2e1 100%);
+
+	app-appointment-row {
+		width: 100%;
+		
+		.appointment-item {
+			margin-bottom: 12px;
+			
+			.details {
+				width: 100%;
+				
+				h3 {
+					font-size: 1.1em;
+					margin-bottom: 6px;
+				}
+				
+				p {
+					font-size: 0.9em;
+					margin: 3px 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.medical-list {
+		padding: 24px 15%;
+		
+		app-appointment-row {
+			.appointment-item {
+				.details {
+					h3 {
+						font-size: 1.2em;
+					}
+					
+					p {
+						font-size: 1em;
+					}
+				}
+			}
+		}
+	}
+}

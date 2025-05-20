@@ -43,4 +43,21 @@ import Swal from 'sweetalert2';
 
 	}
 
+	public async getWarningConfirmation(title: string, text: string): Promise<SweetAlertResult> {
+
+		return await Swal.fire({
+
+			title,
+			text,
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#03fc5a',
+			confirmButtonText: 'yes',
+			cancelButtonText: 'no',
+			heightAuto: false
+
+		});
+
+	}
+
 }

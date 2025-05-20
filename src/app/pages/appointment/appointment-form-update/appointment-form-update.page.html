@@ -1,0 +1,53 @@
+<app-loading></app-loading>
+
+<app-header title="Actualizar Cita" [showBackButton]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+
+	<ion-card class="form-card">
+
+		<ion-card-content>
+
+			<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+
+				<ion-item lines="full">
+
+					<ion-label position="floating">Tipo de Cita</ion-label>
+
+					<ion-select formControlName="appointed">
+
+						<ion-select-option [value]="0">{{appointmentTypes[0]}}</ion-select-option>
+						<ion-select-option [value]="1">{{appointmentTypes[1]}}</ion-select-option>
+						<ion-select-option [value]="2">{{appointmentTypes[2]}}</ion-select-option>
+						<ion-select-option [value]="3">{{appointmentTypes[3]}}</ion-select-option>
+						<ion-select-option [value]="4">{{appointmentTypes[4]}}</ion-select-option>
+
+					</ion-select>
+
+				</ion-item>
+
+				<ion-item lines="full">
+
+					<ion-label position="floating">Fecha y Hora</ion-label>
+					<ion-datetime formControlName="begins" display-format="DD/MM/YYYY HH:mm" min="{{ minDate }}"preferWheel></ion-datetime>
+
+				</ion-item>
+
+				<ion-item lines="full">
+
+					<ion-label>Estado de la cita</ion-label>
+					<ion-toggle formControlName="state" color="primary" checked="true"></ion-toggle>
+
+				</ion-item>
+
+				<ion-button type="submit" expand="block" class="medical-button" [disabled]="updateForm.invalid">
+					Actualizar Cita
+				</ion-button>
+
+			</form>
+
+		</ion-card-content>
+
+	</ion-card>
+
+</ion-content>

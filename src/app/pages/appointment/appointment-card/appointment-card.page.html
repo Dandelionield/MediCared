@@ -1,0 +1,68 @@
+
+<app-loading></app-loading>
+
+<app-header [title]="appointment ? (appointment.state ? 'Cita Activa' : 'Cita Finalizada') : 'Cita'" [showBackButton]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+	<ion-card class="detail-card">
+		<ion-card-header>
+			<ion-card-title class="medical-title">
+				<ion-icon name="calendar-outline"></ion-icon>
+				Detalles de la Cita
+			</ion-card-title>
+		</ion-card-header>
+
+		@if(appointment && user){
+
+			<ion-card-content>
+				<div class="detail-section">
+					<h3 class="section-title">Información de la Cita</h3>
+					<div class="detail-row">
+						<span class="detail-label">Tipo:</span>
+						<span class="detail-value">{{ getAppointmentType(appointment.appointed) }}</span>
+					</div>
+					<div class="detail-row">
+						<span class="detail-label">Fecha:</span>
+						<span class="detail-value">{{ formatDate(appointment.begins) }}</span>
+					</div>
+					<div class="detail-row">
+						<span class="detail-label">Estado:</span>
+						<span [class]="appointment.state ? 'status-active' : 'status-inactive'">
+							{{ appointment.state ? 'Pendiente' : 'Finalizada' }}
+						</span>
+					</div>
+				</div>
+
+				<div class="detail-section">
+					<h3 class="section-title">Datos del Paciente</h3>
+					<div class="detail-row">
+						<span class="detail-label">Nombre:</span>
+						<span class="detail-value">{{ user.name }} {{ user.surname }}</span>
+					</div>
+					<div class="detail-row">
+						<span class="detail-label">DNI:</span>
+						<span class="detail-value">{{ user.dni }}</span>
+					</div>
+					<div class="detail-row">
+						<span class="detail-label">Fecha Nacimiento:</span>
+						<span class="detail-value">{{ formatBirthDate(user.birthdate) }} ({{ calculateAge(user.birthdate) }} años)</span>
+					</div>
+				</div>
+
+				<div class="actions-section">
+					<ion-item lines="none">
+						<ion-label>Cambiar Estado</ion-label>
+						<ion-toggle 
+							[(ngModel)]="appointment.state"
+							(ionChange)="updateAppointmentState()"
+							color="primary"
+							[checked]="appointment.state">
+						</ion-toggle>
+					</ion-item>
+				</div>
+			</ion-card-content>
+
+		}
+
+	</ion-card>
+</ion-content>
